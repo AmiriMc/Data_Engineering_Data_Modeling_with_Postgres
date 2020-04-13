@@ -6,6 +6,15 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    Process song file. Insert song record and artists record.
+    Perfom ETL on first dataset song_data, to create the songs and artists dimensional tables.
+    
+    Arguments:
+        cur {object}: The SQL cursor to postgres to maintain persistent connection to PostgreSQL backend.
+        filepath {str}: The filepath to 'data/song_data' directory.
+    """
+    
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -21,6 +30,15 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    Process log file. 
+    Perfom ETL on second dataset log_data, to create the time and users dimensional tables as well as the songplays fact table.
+    
+    Arguments:
+        cur {object}: The SQL cursor to postgres to maintain persistent connection to PostgreSQL backend.
+        filepath {str}: The filepath to 'data/log_data' directory.
+    """    
+    
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -64,6 +82,12 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    Process data.
+    
+    Get all .json files from matching directory. 
+    Get total number of files found.
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -83,6 +107,10 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+    """
+    Create a connection to the database.
+    Use the connection to get a cursor that can be used to execute queries.
+    """ 
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
