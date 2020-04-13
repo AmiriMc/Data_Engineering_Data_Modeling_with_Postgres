@@ -12,6 +12,17 @@ They'd like a __data engineer__ to create a __Postgress database__ with tables d
 
 The goal of this project was to model user activity data to create a database and ETL pipeline in Postgres using __Python__. I had to define __Fact and Dimension tables__ for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and __SQL__.
 
+### To run the Python scripts, follow instructions below:
+
+1. Load Docker image using instructions below.
+2. In a terminal, run the command `python create_tables.py`.
+3. Run etl.ipynb to observe how the ETL process was developed for each table.
+4. Run test.ipynb to test whether all of the tables were loaded correctly.
+5. Close the test.ipynb notebook by restarting the kernel.
+6. Close the etl.ipynb by restarting the kernel, or running `conn.close()` from inside the notebook.
+7. Run the etl.py script to read and process all of the files from `song_data` and `log_data` and load them into the tables.
+8. Rerun test.ipynb to test whether all of the tables were loaded correctly.
+
 ## Schema Design for the Database
 
 The __Star schema__ design was used to create this database. The design includes 1 Fact table (songplays) and 4 Dimension tables (users, songs, artists, and time). The _sql_queries.py_ file contains all of the PostgreSQL queries such as `CREATE TABLE` , `DROP table IF EXISTS` , `INSERT INTO` , and `SELECT`. The _create_tables.py_ file is used to create the sparkifydb database, and all of the required tables that are defined in the _sql_queries.py_ script.
