@@ -105,6 +105,7 @@ song_table_insert = ("""
        year,
        duration)
     VALUES (%s, %s, %s, %s, %s)
+    ON CONFLICT DO NOTHING
 """)
 
 artist_table_insert = ("""
@@ -129,6 +130,7 @@ time_table_insert = ("""
        year,
        weekday)
     VALUES (%s, %s, %s, %s, %s, %s, %s)
+    ON CONFLICT DO NOTHING
 """)
 
 # FIND SONGS
