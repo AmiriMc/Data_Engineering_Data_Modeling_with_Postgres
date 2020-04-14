@@ -14,14 +14,15 @@ The goal of this project was to model user activity data to create a database an
 
 ### To run the Python scripts, follow instructions below:
 
-1. Load Docker image using instructions below.
-2. In a terminal, run the command `python create_tables.py`.
-3. Run etl.ipynb to observe how the ETL process was developed for each table.
-4. Run test.ipynb to test whether all of the tables were loaded correctly.
-5. Close the test.ipynb notebook by restarting the kernel.
-6. Close the etl.ipynb by restarting the kernel, or running `conn.close()` from inside the notebook.
-7. Run the etl.py script to read and process all of the files from `song_data` and `log_data` and load them into the tables.
-8. Rerun test.ipynb to test whether all of the tables were loaded correctly.
+1. Unzip the Data folder. Make sure the unzipped Data folder is in the same directory as the scripts.
+2. Load Docker image using the instructions below.
+3. In a terminal, run the command `python create_tables.py` to run the create_tables.py script.
+4. Run all cells in etl.ipynb to observe how the ETL process was developed for each table.
+5. Run all cells in test.ipynb to test whether all of the tables were loaded correctly.
+6. Close the test.ipynb notebook by restarting the kernel.
+7. Close the etl.ipynb by restarting the kernel, or by running `conn.close()` from inside the notebook.
+8. In a terminal, run the command `python etl.py` script to read and process all of the files from `song_data` and `log_data` and load them into the tables.
+9. Rerun test.ipynb to test whether all of the tables were loaded correctly.
 
 ## Schema Design for the Database
 
