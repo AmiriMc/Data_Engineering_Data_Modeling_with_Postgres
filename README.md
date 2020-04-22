@@ -4,7 +4,7 @@
 
 This project was provided as part of Udacity's Data Engineering Nanodegree program.
 
-A startup called *Sparkify* wants to analyze the data they've been colelcting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of __JSON logs__ on user activity on the app, as well as a directory with __JSON metadata__ on the songs in their app. 
+A startup called *Sparkify* wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of __JSON logs__ on user activity on the app, as well as a directory with __JSON metadata__ on the songs in their app. 
 
 They'd like a __data engineer__ to create a __Postgress database__ with tables designed to optimize queries on song play analysis, and bring you on the project. Your role is to create a database schema and __ETL pipeline__ for this analysis. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
 
